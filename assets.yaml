@@ -2,7 +2,7 @@
 # 項目の定義はハブの assets/README.md を参照。
 #   https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md
 # 2026-11-18 に、ハブの仮置きの台帳（assets/nro45m.yaml）から移した（判断記録 0006）。
-# 公開資料から AI が埋めた。未記入は聞き取り（interviews/）で埋める。
+# 公開資料から AI が埋め、聞き取り（interviews/）で補った。
 #
 # この台帳にない id の置き場所は、ハブの assets/README.md の資産の索引で引ける。
 #
@@ -12,19 +12,42 @@
 #   40周年記念誌：『野辺山宇宙電波観測所40周年記念誌』2022年2月（国立国会図書館 請求記号 MB12-M7）。p.N はそのページ。
 #     書誌の詳細はハブの history/README.md の出典の略記。年次報告と食い違うときは年次報告を採る
 #   聞き取りYYYY-MM-DD(-n) 問N：interviews/YYYY-MM-DD(-n).md の問N
+#   聞き取り2026-11-18 問N：nro-45m-if の interviews/2026-11-18.md の問N（IF 系、連続波、標準時計を続けて聞いたため、記録は nro-45m-if にだけ置く）
+#     https://github.com/nobeyama-radio-observatory/nro-45m-if/blob/main/interviews/2026-11-18.md
 
 - id: be-continuum
-  name: 連続波のバックエンド（Continuum BE）
+  name: 連続波のバックエンド（Continuum BE、2026年7月まで）
+  kind: 分光計
+  part_of: nro45m
+  depends_on: [if-system]
+  status: 廃止
+  introduced: 未記入
+  ended: 2026年7月に故障し、計算機グループが新しいシステム（be-continuum-2026）に更新した
+  maintenance: {by: なし, condition: 明確な担当者がいなかった, effort: 未記入}
+  renewal: 新しいシステムに置き換えた
+  owner_role: なし
+  maintainers: 0
+  docs: データシート
+  sources:
+    - データシート（連続波の観測は、科学観測としては提供せず、ポインティングの観測だけに使う）
+    - 故障と更新、担当：聞き取り2026-11-18 問3
+  note: IF の帯域は 4〜8 GHz、2チャンネル（聞き取り2026-11-18 問4）
+
+- id: be-continuum-2026
+  name: 連続波のバックエンド（2026年7月からの新しいシステム）
   kind: 分光計
   part_of: nro45m
   depends_on: [if-system]
   status: 運用中
   offered: 所内のみ
-  introduced: 未記入
-  maintenance: {by: 未記入, condition: 未記入, effort: 未記入}
-  renewal: 未記入
-  owner_role: 未定
+  introduced: 2026年7月に、故障した旧システムに代えて計算機グループが作った
+  maintenance: {by: 所内, condition: 未記入, effort: 未記入}
+  renewal: >-
+    正式に提供しているのはポインティングだけ。利用者のコミュニティから科学利用の要望もあり、YATSUGATAKE の最終版（YKSP）で
+    16チャンネル（帯域は 2 GHz 幅）の連続波を取れるようになる時期に合わせて、連続波の科学観測のモードを公開したい。
+    そのために、連続波のモードの観測指示書の作成ツール（nro-user-tools の tool-obs-script）とデータ解析のソフトウェア（tool-cont）を整える必要がある
+  owner_role: 計算機グループ
   maintainers: 未記入
-  docs: データシート
   sources:
-    - データシート（連続波の観測は、科学観測としては提供せず、ポインティングの観測だけに使う）
+    - 導入、担当：聞き取り2026-11-18 問3
+    - 提供と更新の見込み：聞き取り2026-11-18 問4、データシート
