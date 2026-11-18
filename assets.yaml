@@ -17,7 +17,7 @@
 
 - id: be-continuum
   name: 連続波のバックエンド（Continuum BE、2026年7月まで）
-  kind: 分光計
+  kind: 信号処理
   part_of: nro45m
   depends_on: [if-system]
   status: 廃止
@@ -35,7 +35,7 @@
 
 - id: be-continuum-2026
   name: 連続波のバックエンド（2026年7月からの新しいシステム）
-  kind: 分光計
+  kind: 信号処理
   part_of: nro45m
   depends_on: [if-system]
   status: 運用中
