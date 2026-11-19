@@ -27,7 +27,9 @@
   renewal: 新しいシステムに置き換えた
   owner_role: なし
   maintainers: 0
-  docs: データシート
+  docs:
+    - Continuum BE のページ（構成、IF の割り当て。2026年7月の更新より前の記述のまま） https://www.nro.nao.ac.jp/projects/continuum-be/
+    - 装置情報（Status Report。今季の能力の表） https://www.nro.nao.ac.jp/projects/45m/datasheets/ （2026-11-19 に確認）
   sources:
     - データシート（連続波の観測は、科学観測としては提供せず、ポインティングの観測だけに使う）
     - 故障と更新、担当：聞き取り2026-11-18 問3
